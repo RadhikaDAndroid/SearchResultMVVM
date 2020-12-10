@@ -3,6 +3,9 @@ package com.radhika.code.fidelity.data.model
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
+/*
+Search Result api Response
+ */
 data class SearchResult(
     @SerializedName("mal_id") val malId: String?,
     @SerializedName("url") val url: String?,

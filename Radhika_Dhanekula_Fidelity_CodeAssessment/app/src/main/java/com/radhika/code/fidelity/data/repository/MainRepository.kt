@@ -6,7 +6,7 @@ import io.reactivex.Single
 
 class MainRepository(private val apiHelper: ApiHelper) {
 
-    fun getUsers(searchtext:String): Single<SearchData> {
-        return apiHelper.getUsers(searchtext)
+    fun getSearchData(searchtext:String): Single<SearchData> {
+        return apiHelper.getSearchDataHelper(searchtext)
     }
 }

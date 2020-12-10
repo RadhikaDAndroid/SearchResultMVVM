@@ -12,22 +12,27 @@ import com.radhika.code.fidelity.R
 import com.radhika.code.fidelity.data.model.SearchResult
 import kotlinx.android.synthetic.main.item_layout.view.*
 
+/*
+Populate the Search Result api Response data in UI
+using RecyclerView
+ */
+
 class MainAdapter(
     private val searchResults: ArrayList<SearchResult>
 ) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
 
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(user: SearchResult) {
-            itemView.textViewtitle.text = user.title
-            itemView.textViewEpisodes.text = itemView.context.getString(R.string.episode_title).plus(user.episodes.toString())
+        fun bind(searchResult: SearchResult) {
+            itemView.textViewtitle.text = searchResult.title
+            itemView.textViewEpisodes.text = itemView.context.getString(R.string.episode_title).plus(searchResult.episodes.toString())
             itemView.texturllink.text = itemView.context.getString(R.string.moredetails)
-            itemView.textviewsynopsis.text = user.synopsis
-            itemView.textviewrating.text = itemView.context.getString(R.string.rating_title).plus(user.rated.toString())
+            itemView.textviewsynopsis.text = searchResult.synopsis
+            itemView.textviewrating.text = itemView.context.getString(R.string.rating_title).plus(searchResult.rated.toString())
             itemView.texturllink.setOnClickListener {
-                showOutofAppDialog(user.url)
+                showOutofAppDialog(searchResult.url)
             }
             Glide.with(itemView.imageViewAvatar.context)
-                .load(user.imageUrl)
+                .load(searchResult.imageUrl)
                 .into(itemView.imageViewAvatar)
         }
 

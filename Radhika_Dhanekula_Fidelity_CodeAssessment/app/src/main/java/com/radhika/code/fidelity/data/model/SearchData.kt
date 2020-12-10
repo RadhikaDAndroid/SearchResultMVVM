@@ -2,6 +2,9 @@ package com.radhika.code.fidelity.data.model
 
 import com.google.gson.annotations.SerializedName
 
+/*
+Search api Response
+ */
 data class SearchData
     (
     @SerializedName("request_hash") val requestHash: String,

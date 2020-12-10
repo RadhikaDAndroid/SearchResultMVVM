@@ -10,22 +10,25 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
+/*
+View Model with Live Data
+ */
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
-    private val users = MutableLiveData<Resource<SearchData>>()
+    private val searchData = MutableLiveData<Resource<SearchData>>()
     private val compositeDisposable = CompositeDisposable()
 
-    fun fetchUsers(searchText: String) {
+    fun fetchSearchResults(searchText: String) {
         compositeDisposable.add(
-            mainRepository.getUsers(searchText)
+            mainRepository.getSearchData(searchText)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe {Resource.loading(null)}
-                .subscribe({ userList ->
-                    users.postValue(Resource.success(userList))
+                .subscribe({ searchResultList ->
+                    searchData.postValue(Resource.success(searchResultList))
                 }, {
-                    users.postValue(Resource.error("Something Went Wrong", null))
+                    searchData.postValue(Resource.error("Something Went Wrong", null))
                 })
         )
     }
@@ -35,7 +38,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         compositeDisposable.dispose()
     }
 
-    fun getUsers(): LiveData<Resource<SearchData>>{
-        return users
+    fun getSearchData(): LiveData<Resource<SearchData>>{
+        return searchData
     }
 }

@@ -5,6 +5,6 @@ import io.reactivex.Single
 
 interface ApiService {
 
-    fun getUsers(searchtext:String): Single<SearchData>
+    fun getSearchData(searchtext:String): Single<SearchData>
 
 }

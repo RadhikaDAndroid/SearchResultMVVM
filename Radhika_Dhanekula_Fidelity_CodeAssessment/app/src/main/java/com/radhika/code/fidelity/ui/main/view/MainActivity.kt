@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                     true -> {
                         search_edit_text.imeOptions = EditorInfo.IME_ACTION_SEARCH
                         setupViewModel()
-                        mainViewModel.fetchUsers(it.toString())
+                        mainViewModel.fetchSearchResults(it.toString())
                         setupObserver()
                     }
                     false -> {
@@ -89,11 +89,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupObserver() {
 
-        mainViewModel.getUsers().observe(this, Observer {
+        mainViewModel.getSearchData().observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     progressBar.visibility = View.GONE
-                    it.data?.let { users -> renderList(users.results) }
+                    it.data?.let { searchResults -> renderList(searchResults.results) }
                     recyclerView.visibility = View.VISIBLE
                 }
                 Status.LOADING -> {
@@ -109,8 +109,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun renderList(users: List<SearchResult>) {
-        adapter.addData(users)
+    private fun renderList(searchResultList: List<SearchResult>) {
+        adapter.addData(searchResultList)
         adapter.notifyDataSetChanged()
     }
 
