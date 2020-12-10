@@ -24,7 +24,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
                 .doOnSubscribe {Resource.loading(null)}
                 .subscribe({ userList ->
                     users.postValue(Resource.success(userList))
-                }, { throwable ->
+                }, {
                     users.postValue(Resource.error("Something Went Wrong", null))
                 })
         )

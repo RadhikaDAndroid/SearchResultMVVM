@@ -7,4 +7,6 @@
     <string name="outofappmessage">You\'re continuing to another website.Continue?</string>
     <string name="search">SEARCH</string>
     <string name="minimum_length_searchtext_message">Please enter minimum of 3 characters to search</string>
+    <string name="episode_title">\"Episodes:  \"</string>
+    <string name="rating_title">\"Rating:    \"</string>
 </resources>

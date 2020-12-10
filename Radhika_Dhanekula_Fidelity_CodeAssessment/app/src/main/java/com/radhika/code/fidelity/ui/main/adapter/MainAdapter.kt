@@ -12,7 +12,6 @@ import com.radhika.code.fidelity.R
 import com.radhika.code.fidelity.data.model.SearchResult
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-
 class MainAdapter(
     private val searchResults: ArrayList<SearchResult>
 ) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
@@ -20,10 +19,10 @@ class MainAdapter(
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(user: SearchResult) {
             itemView.textViewtitle.text = user.title
-            itemView.textViewEpisodes.text = "Episodes:  ".plus(user.episodes.toString())
+            itemView.textViewEpisodes.text = itemView.context.getString(R.string.episode_title).plus(user.episodes.toString())
             itemView.texturllink.text = itemView.context.getString(R.string.moredetails)
             itemView.textviewsynopsis.text = user.synopsis
-            itemView.textviewrating.text = "Rating:  ".plus(user.rated.toString())
+            itemView.textviewrating.text = itemView.context.getString(R.string.rating_title).plus(user.rated.toString())
             itemView.texturllink.setOnClickListener {
                 showOutofAppDialog(user.url)
             }
