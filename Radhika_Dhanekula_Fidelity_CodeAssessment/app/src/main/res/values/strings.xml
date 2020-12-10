@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FidelitySearchApp</string>
+    <string name="hint_text">Enter the text</string>
+    <string name="moredetails">MORE DETAILS</string>
+    <string name="yes">YES</string>
+    <string name="no">No</string>
+    <string name="outofappmessage">You\'re continuing to another website.Continue?</string>
+    <string name="search">SEARCH</string>
+    <string name="minimum_length_searchtext_message">Please enter minimum of 3 characters to search</string>
+</resources>

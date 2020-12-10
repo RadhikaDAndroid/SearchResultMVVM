@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewtitle"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textviewsynopsis"
+        android:layout_width="0dp"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/textViewtitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtitle"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEpisodes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/textViewtitle"
+        app:layout_constraintTop_toBottomOf="@+id/textviewsynopsis"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textviewrating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/textViewtitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEpisodes"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/texturllink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clickable="true"
+        android:textSize="10dp"
+        android:textAppearance="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

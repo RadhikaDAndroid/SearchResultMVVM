@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_text_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:imeOptions="actionSearch"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:endIconMode="clear_text"
+        android:hint="@string/hint_text">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionSearch"
+            android:imeActionLabel="@string/search"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+</layout>
+
