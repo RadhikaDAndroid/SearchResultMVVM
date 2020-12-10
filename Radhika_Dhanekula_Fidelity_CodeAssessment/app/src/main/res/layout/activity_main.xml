@@ -10,22 +10,14 @@
         layout="@layout/search_edittext_view"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        style="@style/Components.Card"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="24dp">
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:visibility="gone" />
-    </androidx.cardview.widget.CardView>
 
     <ProgressBar
         android:id="@+id/progressBar"
